@@ -9,14 +9,9 @@ trigger:
 pool:
   vmImage: 'Ubuntu-16.04'
 
-resources:
-  containers:
-    - container: linux
-      image: circleci/node:latest-browsers
+container: circleci/node:latest-browsers
+
 steps:
-  - task: NodeTool@0
-    inputs:
-      versionSpec: '10.x'
   - task: Npm@1
     displayName: 'npm install'
     inputs:
